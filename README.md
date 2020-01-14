@@ -2,45 +2,29 @@
 
 `(c) Concept by Hanns Adrian Böhme, 2020`
 
-Emojigamble is a fun collection of traditional paper games like TicTacToe, 4wins and Battleship, **but** instead of using `X` and `O` you play with emojis. Each emoji has either a passive or active ability, which can be used while or at the end of each game. Abilities are upgradable to make them stronger.
+Emojigamble is a fun collection of traditional paper games like TicTacToe, 4wins and Battleship, **but** instead of using `X` and `O` you play with emojis. Each emoji has either a passive or active ability, which can be used during or at the end of each game. Abilities are upgradable.
 
-You play these games together with your friends or other players from the internet. While playing you win a lot of coins and gems.
+You play these games together with your friends or other players from the internet. While playing you win a lot of gems.
 
-As you win coins you can buy new emojis to play with in the games. Some emojis have special abilities e.g. increasing the chance for you to win gems/coins or even a lootbox. Gems compared to coins can buy much more than just new emojis to enhance your game. With gems it is possible to buy lootboxes and upgrade existing emojis. Lootboxes can gift you with anything reaching from coins over emojis to gems, based on their rarity and upgrading Emojis makes them stronger.
+As you win gems you can buy new emojis to use within the games. Some emojis have special abilities e.g. increasing the chance for you to win gems or even a lootbox. With gems it is also possible to buy lootboxes and upgrade the abilities of existing emojis. Lootboxes, based on their rarity, can gift you with anything reaching from emojis with specific ability levels to gems.
 
 ## Abilities
 
 ### For all games
 
-**Just Smile**
-
-  *Golden smile with golden coins as result.*
-
-    😀 Level 1
-
-      Increases gained coins by 10% at the end of each game
-
-    😃 Level 2
-
-      Increases gained coins by 20% at the end of each game
-
-    😄 Level 3
-
-      Increases gained coins by 30% at the end of each game
-
 **Joy to the gems**
 
   *Increase your gem benefit with this excited emoji.*
 
-    😅 Level 1
+    😀 Level 1
 
       Increases gained gems by 10% at the end of each game
 
-    😂 Level 2
+    😃 Level 2
 
       Increases gained gems by 20% at the end of each game
 
-    🤣 `Level 3`
+    😄 `Level 3`
 
       Increases gained gems by 30% at the end of each game
 
