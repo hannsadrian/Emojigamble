@@ -1,3 +1,5 @@
+*Project unfinished, work in progress*
+
 # 🎰 Emojigamble
 
 Emojigamble is a fun collection of traditional paper games like TicTacToe, 4wins and Battleship, **but** instead of using `X` and `O` you play with emojis. Each emoji has either a passive or active ability, which can be used during or at the end of each game. Abilities are upgradable.
