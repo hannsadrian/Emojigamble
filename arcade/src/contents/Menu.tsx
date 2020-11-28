@@ -10,14 +10,15 @@ interface MenuProps {}
 const Menu: React.FC<MenuProps> = () => {
   return (
     <div className="p-4 mx-auto sm:p-8 min-h-screen max-w-3xl">
+      <p className="mt-12 select-none text-2xl font-caveat text-gray-500">Funzel Environment presents</p>
       <h1
-        className="mt-12 text-3xl font-bold font-mono select-none cursor-default"
+        className="text-3xl font-bold font-mono select-none cursor-default"
         style={{ fontFamily: "Inter, 'Segoe UI Emoji'" }}
       >
-        🕹 Emojigamble
+        Emoji<span className="text-orange-500">gamble</span>
       </h1>
       <p className="font-serif italic max-w-2xl my-6">
-        Emojigamble is a fun collection of traditional paper games like
+        A fun collection of traditional paper games like
         TicTacToe, 4wins and Battleship, but{" "}
         <b>instead of using X and O you play with emojis</b>. Each emoji has
         either a passive or active ability, which can be used during or at the
@@ -36,6 +37,7 @@ const Menu: React.FC<MenuProps> = () => {
             ping={<GreenPing />}
             bold={true}
             title="🎲 TicTacToe"
+            link="/tictactoe"
             className="md:col-span-2"
           />
           <MenuButton
