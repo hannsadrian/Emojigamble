@@ -1,11 +1,9 @@
 import React from "react";
-import Ping from "./Ping";
+import Ping, { PingProps } from "./Ping";
 
-interface GreenPingProps {}
-
-const GreenPing: React.FC<GreenPingProps> = () => {
+const GreenPing: React.FC<PingProps> = (props) => {
   return (
-    <Ping pingClass="bg-green-500" solidClass="bg-green-600"/>
+    <Ping {...props} pingClass="bg-green-500" solidClass="bg-green-600"/>
   );
 };
 

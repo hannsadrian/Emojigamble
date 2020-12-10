@@ -1,15 +1,16 @@
 import React from "react";
 
 interface PingProps {
-  solidClass: string;
-  pingClass: string;
+  center?: boolean;
+  solidClass?: string;
+  pingClass?: string;
 }
 
 const Ping: React.FC<PingProps> = (props) => {
   return (
     <div
       className={
-        "my-auto sm:mb-auto ml-3 mr-2 rounded-full h-4 w-4 " + props.solidClass
+        (props.center ? "mx-auto my-auto " : "") + "rounded-full h-4 w-4 " + props.solidClass
       }
     >
       <div
@@ -20,3 +21,4 @@ const Ping: React.FC<PingProps> = (props) => {
 };
 
 export default Ping;
+export type {PingProps};

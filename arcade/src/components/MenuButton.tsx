@@ -19,7 +19,7 @@ const MenuButton: React.FC<MenuButtonProps> = (props) => {
             props.className
           }
         >
-          {props.ping}
+          <div className="my-auto sm:mb-auto ml-3 mr-2">{props.ping}</div>
           <div className="ml-1">
             <p className={props.bold ? "font-bold" : ""}>{props.title}</p>
           </div>
