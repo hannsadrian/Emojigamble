@@ -1,5 +1,5 @@
 import React from "react";
-import Brand_alt from "./Brand_alt";
+import BrandAlt from "./BrandAlt";
 
 interface BrandProps {}
 
@@ -9,7 +9,7 @@ const Brand: React.FC<BrandProps> = () => {
   return (
     <>
       {!alt ? (
-        <div className="flex select-none">
+        <div className="flex select-none text-left">
           <span className="text-4xl my-auto mr-2">🕹</span>
           <div>
             <p className="uppercase text-sm text-gray-500 dark:text-gray-300 tracking-wide -mb-1">
@@ -21,7 +21,7 @@ const Brand: React.FC<BrandProps> = () => {
           </div>
         </div>
       ) : (
-        <Brand_alt />
+        <BrandAlt />
       )}
     </>
   );

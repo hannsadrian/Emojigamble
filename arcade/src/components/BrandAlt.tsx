@@ -1,10 +1,10 @@
 import React from "react";
 
-interface Brand_altProps {}
+interface BrandAltProps {}
 
-const Brand_alt: React.FC<Brand_altProps> = () => {
+const BrandAlt: React.FC<BrandAltProps> = () => {
   return (
-    <div className="flex select-none">
+    <div className="flex select-none text-left">
       <span className="text-4xl my-auto mr-2">😏</span>
       <div>
         <p className="uppercase text-sm text-gray-500 dark:text-gray-300 tracking-wide -mb-1 mt-1">
@@ -24,4 +24,4 @@ const Brand_alt: React.FC<Brand_altProps> = () => {
   );
 };
 
-export default Brand_alt;
+export default BrandAlt;
