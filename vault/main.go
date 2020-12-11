@@ -2,14 +2,15 @@ package main
 
 import (
 	"encoding/json"
-	firebase "firebase.google.com/go"
 	"fmt"
-    "github.com/googollee/go-socket.io"
-	"golang.org/x/net/context"
-	"google.golang.org/api/option"
 	"log"
 	"net/http"
 	"strings"
+
+	firebase "firebase.google.com/go"
+	socketio "github.com/googollee/go-socket.io"
+	"golang.org/x/net/context"
+	"google.golang.org/api/option"
 )
 
 func corsMiddleware(next http.Handler) http.Handler {
@@ -40,9 +41,9 @@ func contains(s []string, search string) bool {
 }
 
 type TicTacToeMove struct {
-	Col int `json:"col"`
-	Row int `json:"row"`
-	Emoji string `json:"emoji"`
+	Col     int    `json:"col"`
+	Row     int    `json:"row"`
+	Emoji   string `json:"emoji"`
 	IdToken string `json:"idToken"`
 }
 
@@ -67,8 +68,10 @@ func main() {
 		token, err := client.VerifyIDToken(context.Background(), idToken)
 		if err != nil {
 			log.Printf("error verifying ID token: %v\n", err)
+			s.Close()
 			return nil
 		}
+		s.Emit("authenticated")
 
 		log.Printf("Verified ID token: %v\n", token.UID)
 

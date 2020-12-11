@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import firebase from "../firebase";
+import firebase, { SignIn } from "../firebase";
 import Brand from "./Brand";
 import {Link} from "react-router-dom";
 
-interface NavbarProps {}
-
-function SignIn() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase
-    .auth()
-    .signInWithPopup(provider)
-    .then((result) => {
-      console.log(result);
-    });
-}
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC = () => {
     const [user, setUser] = useState(null);
 
     firebase.auth().onAuthStateChanged((res: any) => {

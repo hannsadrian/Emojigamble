@@ -4,10 +4,9 @@ import BluePing from "../components/icons/BluePing";
 import GreenPing from "../components/icons/GreenPing";
 import TealPing from "../components/icons/TealPing";
 import MenuButton from "../components/MenuButton";
+import { SignOut } from "../firebase";
 
-interface MenuProps {}
-
-const Menu: React.FC<MenuProps> = () => {
+const Menu: React.FC = () => {
   return (
     <div className="p-4 mx-auto sm:p-8 min-h-screen max-w-3xl">
       <p className="mt-12 select-none text-2xl font-caveat text-gray-500">Funzel Environment presents</p>
@@ -78,6 +77,9 @@ const Menu: React.FC<MenuProps> = () => {
             title="🌳 New private Game"
           />
         </div>
+      </div>
+      <div className="flex">
+        <button onClick={SignOut} className="mb-8 mt-12 mx-auto text-gray-500">Sign Out</button>
       </div>
     </div>
   );

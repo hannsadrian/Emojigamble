@@ -3,7 +3,7 @@ import Brand from "../components/Brand";
 
 interface StatusDisplayProps {
   icon?: any;
-  message: string;
+  message: any;
 }
 
 const StatusDisplay: React.FC<StatusDisplayProps> = (props) => {

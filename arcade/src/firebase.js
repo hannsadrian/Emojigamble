@@ -13,3 +13,22 @@ const config = {
 };
 firebase.initializeApp(config);
 export default firebase;
+
+const auth = firebase.auth();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+function SignIn() {
+  auth
+    .signInWithPopup(googleAuthProvider)
+    .then((result) => {
+      console.log(result);
+    });
+}
+
+function SignOut() {
+  auth.signOut().then(() => {
+    window.location.reload();
+  });
+}
+
+export {googleAuthProvider, auth, SignIn, SignOut}
