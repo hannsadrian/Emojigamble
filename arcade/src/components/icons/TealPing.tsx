@@ -3,7 +3,7 @@ import Ping, { PingProps } from "./Ping";
 
 const TealPing: React.FC<PingProps> = (props) => {
   return (
-    <Ping {...props} pingClass="bg-teal-500" solidClass="bg-teal-600"/>
+    <Ping {...props} pingClass="bg-teal-400" solidClass="bg-teal-500"/>
   );
 };
 
