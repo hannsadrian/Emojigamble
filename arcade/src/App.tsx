@@ -10,6 +10,7 @@ import RedPing from "./components/icons/RedPing";
 import GreenPing from "./components/icons/GreenPing";
 import AmberPing from "./components/icons/AmberPing";
 import BluePing from "./components/icons/BluePing";
+import TextBanner from "./components/TextBanner";
 import { IoLogoGoogle, IoLogIn } from "react-icons/io5";
 
 function App() {
@@ -104,12 +105,22 @@ function App() {
         ) : connectionError ? (
           <StatusDisplay
             icon={<RedPing center={true} />}
-            message="Connection Error!"
+            message={
+              <TextBanner
+                title="Conectivity Error"
+                message="Please make sure you're online"
+              />
+            }
           />
         ) : (
           <StatusDisplay
             icon={<GreenPing center={true} />}
-            message="Connecting to vault"
+            message={
+              <TextBanner
+                title="Connecting"
+                message="Establishing a secured connection"
+              />
+            }
           />
         )}
       </Router>
