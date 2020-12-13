@@ -17,9 +17,17 @@ export default firebase;
 const auth = firebase.auth();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-function SignIn() {
+function GoogleSignIn() {
   auth
     .signInWithPopup(googleAuthProvider)
+    .then((result) => {
+      console.log(result);
+    });
+}
+
+function AnonymousSignIn() {
+  auth
+    .signInAnonymously()
     .then((result) => {
       console.log(result);
     });
@@ -31,4 +39,4 @@ function SignOut() {
   });
 }
 
-export {googleAuthProvider, auth, SignIn, SignOut}
+export {googleAuthProvider, auth, GoogleSignIn, AnonymousSignIn, SignOut}

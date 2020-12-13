@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Menu from "./contents/Menu";
 import io, { Socket } from "socket.io-client";
-import { auth, SignIn } from "./firebase";
+import { auth, GoogleSignIn, AnonymousSignIn } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TicTacToe from "./contents/TicTacToe";
 import StatusDisplay from "./contents/StatusDisplay";
@@ -10,6 +10,7 @@ import RedPing from "./components/icons/RedPing";
 import GreenPing from "./components/icons/GreenPing";
 import AmberPing from "./components/icons/AmberPing";
 import BluePing from "./components/icons/BluePing";
+import { IoLogoGoogle, IoLogIn } from "react-icons/io5";
 
 function App() {
   let [loading, setLoading] = useState<boolean>(true);
@@ -23,12 +24,13 @@ function App() {
       setLoading(false);
 
       if (user == null) {
-        console.log("user is null");
         return;
       }
 
       user.getIdToken().then((res) => {
-        const s = io("http://localhost:8000?idToken=" + res);
+        const s = io("http://localhost:8000?idToken=" + res, {
+          reconnectionDelay: 5000,
+        });
         setSocket(s);
 
         s.on("connect", () => {
@@ -38,7 +40,7 @@ function App() {
 
         s.on("authenticated", () => {
           setConnected(true);
-        })
+        });
 
         s.on("connect_error", (error: any) => {
           // TODO: deal with connection errors
@@ -47,14 +49,14 @@ function App() {
           setConnected(false);
         });
 
-        s.on("disconnect", () => {          
+        s.on("disconnect", () => {
           if (!auth.currentUser) {
             s.disconnect();
           }
 
-          console.log("disconnected")
+          console.log("disconnected");
           setConnected(false);
-        })
+        });
       });
     });
   }, []);
@@ -64,8 +66,8 @@ function App() {
       <Router>
         {loading ? (
           <StatusDisplay
-            icon={<BluePing center={true}/>}
-            message="Loading"
+            icon={<BluePing center={true} />}
+            message={<TextBanner title="Loading" />}
           />
         ) : connected ? (
           <>
@@ -81,8 +83,23 @@ function App() {
           </>
         ) : !auth.currentUser ? (
           <StatusDisplay
-            icon={<AmberPing center={true}/>}
-            message={<p>Please <button className="text-blue-400" onClick={SignIn}>login</button>.</p>}
+            icon={<AmberPing center={true} />}
+            message={
+              <div className="-mt-1 flex-row">
+                <button
+                  className="text-gray-600 select-none flex mx-auto my-1 px-3 py-2 rounded hover:shadow-md hover:bg-white active:shadow-sm transition duration-100"
+                  onClick={GoogleSignIn}
+                >
+                  <IoLogoGoogle className="my-auto mr-2" /> Sign in with Google
+                </button>
+                <button
+                  className="text-gray-600 select-none flex mx-auto my-1 px-3 py-2 rounded hover:shadow-md hover:bg-white active:shadow-sm transition duration-100"
+                  onClick={AnonymousSignIn}
+                >
+                  <IoLogIn className="my-auto mr-2" /> Continue Anonymous
+                </button>
+              </div>
+            }
           />
         ) : connectionError ? (
           <StatusDisplay
