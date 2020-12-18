@@ -1,4 +1,4 @@
-*Project unfinished, work in progress*
+Moved to [https://github.com/Emojigamble](https://github.com/Emojigamble)
 
 # 🎰 Emojigamble
 
